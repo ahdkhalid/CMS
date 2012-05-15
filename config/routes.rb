@@ -1,9 +1,12 @@
 CMS::Application.routes.draw do
+  get "store/index"
+
   resources :pages
 
   get "type_of_duty/admin"
 
   get "type_of_duty/user"
+  root :to => 'store#index', :as => 'store'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
