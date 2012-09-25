@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120423084924) do
+ActiveRecord::Schema.define(:version => 20120924134326) do
+
+  create_table "commenters", :force => true do |t|
+    t.string   "name"
+    t.text     "email_address"
+    t.text     "description"
+    t.integer  "page_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.string   "commenter_name"
+    t.string   "email_address"
+    t.text     "description"
+    t.integer  "page_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "comments", ["page_id"], :name => "index_comments_on_page_id"
 
   create_table "pages", :force => true do |t|
     t.string   "title"

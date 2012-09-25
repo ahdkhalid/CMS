@@ -43,7 +43,7 @@ class PagesControllerTest < ActionController::TestCase
   end
 
   test "should update page" do
-    put :update,:id =>@page.to_param, :page => @update # id: @page, page: @page.attributes
+    put :update, :id =>@page.to_param, :page => @update # id: @page, page: @page.attributes
     assert_redirected_to page_path(assigns(:page))
   end
 
