@@ -1,5 +1,9 @@
 <hr/>
-<p>
+<% if comment == @current_comment %>
+<p class="list_line_odd">
+	<% else %>
+	<p>
+		<% end %>
     <b>Commenter:</b>
     <%= comment.commenter_name %>
   </p>
