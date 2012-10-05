@@ -1,3 +1,21 @@
+  <script type="text/javascript">
+  $('documet').ready(function(){
+    $('#form_button').toggle(function(){
+      $('#two').slideDown(1000);
+	  $('#form_button').html("Hide Form");
+    },
+	function(){
+      $('#two').slideUp(1000);
+	  $('#form_button').html("Show Form");
+    })
+	
+  })
+   $('documet').ready(function(){
+    $('#button').click(function(){
+      $('#show_comment').toggle(1000);
+    })
+  })
+  </script>
 <p id="notice">
 	<%= notice %>
 </p>
@@ -25,12 +43,14 @@
 </div>
 <hr/>
 <h2>Comments</h2>
-<div id="list_line_even">
+<button id="button">Show Comment</button> <br />
+<div id="show_comment" style="display: none">
 	<%= render @page.comments %>
 </div>
 <hr/>
 <h2> Add a comment: </h2>
-<div class="list_line_odd">
+<button id="form_button">Show Form</button> <br /><br />
+<div id="two" style="background:gray;display:none">
 	<%= render "comments/form" %>
 </div>
 <%= link_to 'Edit', edit_page_path(@page) %> |
